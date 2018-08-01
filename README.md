@@ -8,7 +8,7 @@ Coordonatorul activității propune o parte a soluției urmând ca dezvoltarea p
 
 ### Înainte de a începe...
 
-Porțiunea din proiect disponibilă pe GitHub conține fișierele index.html și aplicatie.js. Pentru a putea contribui, este necesar să aveți un cont pe platforma Monaca.io, să creați acolo proiectul (denumirea este neimportant) de tip "OnsenUI V2 + JavaScript splitter".
+Porțiunea din proiect disponibilă pe GitHub conține fișierele "index.html" și "aplicatie.js". Pentru a putea contribui, este necesar să aveți un cont pe platforma Monaca.io, să creați acolo proiectul (denumirea este neimportant) de tip "OnsenUI V2 + JavaScript splitter".
 În directorul rădăcină (www) adăugați un subdirector denumit js în care creați fișierul aplicatie.js.
 Adăugati apoi proiectului două extensii Cordova: File și File Transfer.
 
