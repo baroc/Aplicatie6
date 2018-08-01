@@ -16,24 +16,23 @@
   <ons-splitter>
     <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
       <ons-page>
-        <ons-list>
-          <ons-list-item onclick="fn.load('home.html')" tappable>
-            Home
-          </ons-list-item>
-          <ons-list-item onclick="fn.load('settings.html')" tappable>
-            Settings
-          </ons-list-item>
-          <ons-list-item onclick="fn.load('about.html')" tappable>
-            About
-          </ons-list-item>
+        <ons-list id="listameniu">
+          <ons-list-item onclick="categ=0; fn.load('primapag.html')" tappable>Oferta noastra</ons-list-item>
         </ons-list>
       </ons-page>
     </ons-splitter-side>
-    <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+    <ons-splitter-content id="content" page="prod.html"></ons-splitter-content>
   </ons-splitter>
 
-  <ons-template id="home.html">
-    <ons-page>
+  <!-- lista din meniu se construiește dinamic. Codul necesar trebuie sa fie rulat
+  la încărcarea primei pagini (în metoda atașată evenimentului init, vezi curs 3 pag. 7).  
+  Crearea listei poate fi făcută folosind template-ul următor. -->
+  <ons-template id="liniameniu">
+    <ons-list-item onclick="categ=0; fn.load('prod.html')" tappable>Nume categorie</ons-list-item>
+  </ons-template>
+
+  <ons-template id="primapag.html">
+    <ons-page id="prima">
       <ons-toolbar>
         <div class="left">
           <ons-toolbar-button onclick="fn.open()">
@@ -41,7 +40,7 @@
           </ons-toolbar-button>
         </div>
         <div class="center">
-          Main
+          Produsele cele mai vândute
         </div>
       </ons-toolbar>
       <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
@@ -50,8 +49,14 @@
     </ons-page>
   </ons-template>
 
-  <ons-template id="settings.html">
-  <ons-page>
+  <!-- lista de produse din prod.html se construiește dinamic. Codul categoriei este transmis
+  la selectarea categoriei (variabila categ, vezi macheta elementului de listă). Pentru crearea conținutului
+  codul se pune în metoda atașată evenimentului init. Produsele care trebuie afișate se citesc din 
+  fișierul "http://aplimob.net/produse.json". Pentru a folosi tehnica știută ar trebui creat încă un template
+  care să permită afișarea datelor aferente unui produs. Vă rog să propuneți template-ul necesar și structura
+  obiectelor din fișierul produse.json. -->
+  <ons-template id="prod.html">
+  <ons-page id="prod">
     <ons-toolbar>
       <div class="left">
         <ons-toolbar-button onclick="fn.open()">
@@ -66,7 +71,7 @@
   </ons-template>
 
   <ons-template id="about.html">
-  <ons-page>
+  <ons-page id="about">
     <ons-toolbar>
       <div class="left">
         <ons-toolbar-button onclick="fn.open()">
@@ -74,7 +79,7 @@
         </ons-toolbar-button>
       </div>
       <div class="center">
-        About
+        Despre aplicație
       </div>
     </ons-toolbar>
   </ons-page>

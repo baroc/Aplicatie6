@@ -2,6 +2,15 @@
     ons.ready(function () {
         console.log("Onsen UI is ready!");
         window.requestFileSystem(window.TEMPORARY, 1024, onSuccessFs, onError);
+        /*
+        Aici e de lucru!
+        document.addEventListener('init', function(event) {
+         var page = event.target;
+
+         if (page.id === 'prima') {
+            // Codul pentru crearea dinamică a listei din meniu folosind datele din categorii.json.
+
+        */
     });
 
     function onSuccessFs(fs) {
@@ -65,6 +74,7 @@
         console.log('N-am citit');
     }
 
+    var categ = 0;
     window.fn = {};
     window.fn.open = function () {
         var menu = document.getElementById('menu');
